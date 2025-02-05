@@ -15,7 +15,7 @@
         <p>{{ post.creditoImagem }}</p>
         {% endif %}
         <div>
-            {{ post.conteudo | raw}}
+            {{ post.conteudo | raw | nl2br }}
         </div>
     </article>
 </main>
