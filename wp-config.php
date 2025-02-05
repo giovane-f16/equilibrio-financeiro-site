@@ -1,9 +1,10 @@
 <?php
+define( 'WP_CACHE', true );
 /**
  * The base configuration for WordPress
  *
  * The wp-config.php creation script uses this file during the installation.
- * You don't have to use the website, you can copy this file to "wp-config.php"
+ * You don't have to use the web site, you can copy this file to "wp-config.php"
  * and fill in the values.
  *
  * This file contains the following configurations:
@@ -11,25 +12,26 @@
  * * Database settings
  * * Secret keys
  * * Database table prefix
+ * * Localized language
  * * ABSPATH
  *
- * @link https://developer.wordpress.org/advanced-administration/wordpress/wp-config/
+ * @link https://wordpress.org/support/article/editing-wp-config-php/
  *
  * @package WordPress
  */
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'wordpress' );
+define( 'DB_NAME', 'u896954122_a16nw' );
 
 /** Database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'u896954122_dNrBY' );
 
 /** Database password */
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', 'iabqcxfQkP' );
 
 /** Database hostname */
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', '127.0.0.1' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
@@ -48,14 +50,16 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'put your unique phrase here' );
-define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
-define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
-define( 'NONCE_KEY',        'put your unique phrase here' );
-define( 'AUTH_SALT',        'put your unique phrase here' );
-define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
-define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
-define( 'NONCE_SALT',       'put your unique phrase here' );
+define( 'AUTH_KEY',          ';&lLqG{Z+w^#MxiZj#?:LeXb2:Lg`rDgyo?U]1i<#V:}M0BHG<_{P6Ty:nm|IL)g' );
+define( 'SECURE_AUTH_KEY',   '=U=,_bCi!]_o|}IaO<R]-5l/yl0og`1PeUhdW_tIY%`?+ZbMD|HRxF_OPKg_yW;(' );
+define( 'LOGGED_IN_KEY',     ',r=2/vOZ1>$|]$5zf1)[Nk&3w~7,3+$;!;k5<rFH*b+Q]LC/g<N0|[)v,,(3|c5Q' );
+define( 'NONCE_KEY',         'KW$V-ocWG62F<cRT21Zh*U!<7*1]e^3tQEsu~8ZW2_5{g`5gz!]Q4DoE<6Nc=p^E' );
+define( 'AUTH_SALT',         'K|nV1X(NacH]Db0%-JX}ae`xhyFG@yxfRrKp(jy[Fu}ePm@{XAR#0{J#gME!j?C6' );
+define( 'SECURE_AUTH_SALT',  'zcc>jN%wPw@(atg`KSSfwH |5X5R)NLr%`aA.5{fHE3l/dW^@UDxBxOO_}PXV`,f' );
+define( 'LOGGED_IN_SALT',    'E)2zdPYh=nH65_B5$tY7j~x?19WJg?R Xk3US`@}DxvO>Q_/Q8A~rRe|H4$N|[tS' );
+define( 'NONCE_SALT',        '$nMiCZXFT%ZRpWbeGV|z$VGNvWXYDt{@VX|LDr{.+Yta7s|zAONFxJh<Mo{_{_V4' );
+define( 'WP_CACHE_KEY_SALT', 'W;)1ox;e8ugAb~R|_MZ2^gR<)u&FsLTAeTn^PN&ZcYP8(sMq Z*I(Y<o)+pZ9J^&' );
+
 
 /**#@-*/
 
@@ -64,14 +68,13 @@ define( 'NONCE_SALT',       'put your unique phrase here' );
  *
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
- *
- * At the installation time, database tables are created with the specified prefix.
- * Changing this value after WordPress is installed will make your site think
- * it has not been installed.
- *
- * @link https://developer.wordpress.org/advanced-administration/wordpress/wp-config/#table-prefix
  */
 $table_prefix = 'wp_';
+
+
+/* Add any custom values between this line and the "stop editing" line. */
+
+
 
 /**
  * For developers: WordPress debugging mode.
@@ -83,14 +86,15 @@ $table_prefix = 'wp_';
  * For information on other constants that can be used for debugging,
  * visit the documentation.
  *
- * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/
+ * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', false );
+if ( ! defined( 'WP_DEBUG' ) ) {
+	define( 'WP_DEBUG', false );
+}
 
-/* Add any custom values between this line and the "stop editing" line. */
-
-
-
+define( 'FS_METHOD', 'direct' );
+define( 'COOKIEHASH', '4cfd202a2b29d007bc83f063639216ee' );
+define( 'WP_AUTO_UPDATE_CORE', 'minor' );
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
