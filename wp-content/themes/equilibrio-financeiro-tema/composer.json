@@ -1,0 +1,17 @@
+{
+    "name": "giovanef16/equilibrio-financeiro",
+    "require": {
+        "twig/twig": "^3.18"
+    },
+    "autoload": {
+        "psr-4": {
+            "EquilibrioFinanceiro\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "giovanef16",
+            "email": "giovane_16silva@hotmail.com"
+        }
+    ]
+}

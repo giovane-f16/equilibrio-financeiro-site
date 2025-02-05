@@ -1,0 +1,38 @@
+main>section{
+    margin: 20px auto;
+    max-width: 1280px;
+    width: 100%;
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumbs li {
+    margin-right: 10px;
+}
+.breadcrumbs li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.breadcrumbs i.bi {
+    margin-left: 15px;
+    font-size: 22px;
+}
+
+article {
+    margin: 0px auto 50px;
+    max-width: 1280px;
+    width: 100%;
+}
+
+article img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+    margin: 40px 0;
+}

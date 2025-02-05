@@ -1,0 +1,130 @@
+#introducao {
+    width: 100%;
+    background-color: #dad9d9;
+}
+
+#introducao>div {
+    max-width: 1280px;
+    margin: 20px auto 50px auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#introducao>div div {
+    width: 50%;
+}
+
+#introducao>div div:nth-of-type(2) img {
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+    object-position: center;
+}
+
+#introducao>div h1 {
+    font-size: 52px;
+    width: 65%;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+#introducao>div p {
+    width: 75%;
+    margin-bottom: 70px;
+    line-height: 30px;
+}
+
+#introducao>div div:first-child a,
+#marca>div div a {
+    color: #fff;
+    background-color: #000;
+    padding: 25px 90px;
+    border: 1px solid #000;
+    border-radius: 90px;
+}
+
+#introducao>div div:first-child a:hover,
+#marca>div div a:hover {
+    color: #000;
+    background-color: #dad9d9;
+}
+
+#destaques {
+    width: 100%;
+}
+
+#destaques h2 {
+    font-size: 52px;
+}
+
+#destaques>div {
+    max-width: 1280px;
+    margin: 120px auto;
+    width: 100%;
+}
+
+#destaques .posts {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#destaques .post {
+    width: 32%;
+}
+
+#destaques .post img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+}
+
+#destaques .post a {
+    color: #000;
+    text-align: justify;
+}
+
+#destaques .post a p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#marca {
+    width: 100%;
+}
+
+#marca>div {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto 120px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#marca>div div {
+    width: 45%;
+    text-align: center;
+}
+
+#marca>div div:first-child img {
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+    object-position: center;
+}
+
+#marca>div h4 {
+    font-size: 42px;
+}
+
+#marca>div div p {
+    margin-bottom: 70px;
+    line-height: 30px;
+    text-align: justify;
+}

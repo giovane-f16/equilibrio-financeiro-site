@@ -1,0 +1,22 @@
+<main>
+    <section>
+        <h1>Artigos mais recentes</h1>
+        <ul class="artigos">
+            {% for artigo in artigos %}
+            <li class="artigo">
+                <a href="{{ artigo.url }}">
+                    <img src="{{ artigo.imagem }}" alt="{{ artigo.titulo }}" title="{{ artigo.titulo }}">
+                </a>
+                <div>
+                    <a href="{{ artigo.url }}">
+                        <h2>{{ artigo.titulo }}</h2>
+                        <p>{{ artigo.resumo }}</p>
+                        <span>{{ artigo.dataDePublicacao | date("d/m/Y") }}</span>
+                    </a>
+                </div>                
+            </li>
+            {% endfor %}
+        </ul>
+        <!-- toDo - Implementar botão de ver mais -->
+    </section>
+</main>

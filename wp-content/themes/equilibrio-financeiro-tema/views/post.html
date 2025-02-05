@@ -1,0 +1,21 @@
+<main>
+    <section>
+        <ul class="breadcrumbs">
+            <li><a href="/">Início<i class="bi bi-arrow-right-circle"></i></a></li>
+            <li><a href="/artigos/">Artigos<i class="bi bi-arrow-right-circle"></i></a></li>
+            <li>{{ post.titulo }}</li>
+        </ul>
+    </section>
+
+    <article>
+        <h1>{{ post.titulo }}</h1>
+        <time>Publicado em {{ post.dataDePublicacaoTraduzida }} {% if post.dataDeAtualizacao %} | Atualizado há {{ post.tempoDesdeUltimaAtualizacao }} {% endif %}</time>
+        <img src="{{ post.imagem }}" alt="{{ post.titulo }}" title="{{ post.titulo }}">
+        {% if post.creditoImagem %} <!-- toDo - Criar método na model -->
+        <p>{{ post.creditoImagem }}</p>
+        {% endif %}
+        <div>
+            {{ post.conteudo | raw}}
+        </div>
+    </article>
+</main>

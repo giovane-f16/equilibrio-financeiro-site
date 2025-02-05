@@ -1,0 +1,38 @@
+section {
+    max-width: 1280px;
+    width: 100%;
+    margin: 40px auto;
+}
+
+.artigos {
+    display: flex;
+    flex-direction: column;
+}
+
+.artigos .artigo {
+    display: flex;
+    margin: 20px 0;
+}
+
+.artigos .artigo:not(:last-child) {
+    border-bottom: 1px solid #dad9d9;
+    padding-bottom: 40px;
+}
+
+.artigos .artigo a {
+    width: 100%;
+    max-width: 350px;
+    margin-right: 20px;
+}
+
+.artigos .artigo a img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.artigos .artigo p {
+    width: 60%;
+    text-align: justify;
+}
