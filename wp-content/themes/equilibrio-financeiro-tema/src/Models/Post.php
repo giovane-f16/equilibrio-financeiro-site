@@ -20,6 +20,8 @@ class Post extends AbstractController
     protected ?string $tempo_desde_ultima_atualizacao;
     protected ?string $tag;
     protected ?array $wp_post_meta;
+    protected array $categorias;
+    protected array $relacionadas;
 
     public function __construct(\WP_Post $wp_post)
     {
@@ -208,5 +210,49 @@ class Post extends AbstractController
         $this->tag = $tag[0]->name ?? null;
 
         return $this->tag;
+    }
+
+    public function getCategorias(): array
+    {
+        if (isset($this->categorias)) {
+            return $this->categorias;
+        }
+
+        $categorias = get_the_category($this->getId());
+
+        if (!is_array($categorias)) {
+            return [];
+        }
+
+        $this->categorias = $categorias;
+
+        return $this->categorias;
+    }
+
+    public function getRelacionadas(): array
+    {
+        if (isset($this->relacionadas)) {
+            return $this->relacionadas;
+        }
+
+        $categorias_ids = array_map(function ($categoria) {
+            return $categoria->term_id;
+        }, $this->getCategorias());
+
+        $posts = get_posts([
+            "category__in" => $categorias_ids,
+            "numberposts"  => 3,
+            "exclude"      => $this->getId()
+        ]);
+
+        if (!$posts) {
+            return [];
+        }
+
+        $this->relacionadas = array_map(function ($post) {
+            return new Post($post);
+        }, $posts);
+
+        return $this->relacionadas;
     }
 }

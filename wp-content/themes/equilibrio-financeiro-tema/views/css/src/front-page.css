@@ -1,6 +1,5 @@
 #introducao {
     width: 100%;
-    background-color: #dad9d9;
 }
 
 #introducao>div {
@@ -40,15 +39,23 @@
 #marca>div div a {
     color: #fff;
     background-color: #000;
-    padding: 25px 90px;
     border: 1px solid #000;
-    border-radius: 90px;
+    border-radius: 25px;
+    width: 250px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#introducao>div div:first-child a:hover,
+#introducao>div div:first-child a:hover {
+    color: #000;
+    background-color: #fff;
+}
+
 #marca>div div a:hover {
     color: #000;
-    background-color: #dad9d9;
+    background-color: #fff;
 }
 
 #destaques {
@@ -56,7 +63,7 @@
 }
 
 #destaques h2 {
-    font-size: 52px;
+    font-size: 42px;
 }
 
 #destaques>div {
@@ -127,4 +134,81 @@
     margin-bottom: 70px;
     line-height: 30px;
     text-align: justify;
+}
+
+@media (max-width: 768px) {
+    #introducao>div {
+        flex-direction: column;
+        margin: 20px auto 10px auto;
+    }
+
+    #introducao>div div {
+        width: 100%;
+    }
+
+    #introducao>div div:nth-of-type(2) img {
+        display: none;
+    }
+
+    #introducao>div h1 {
+        font-size: 36px;
+        width: 100%;
+    }
+
+    #introducao>div p {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #introducao>div div:first-child a,
+    #marca>div div a {
+        margin: 0 auto;
+        width: 200px;
+        height: 50px;
+    }
+
+    #destaques>div {
+        margin: 0 auto;
+    }
+
+    #destaques h2 {
+        font-size: 34px;
+    }
+
+    #destaques .posts {
+        flex-direction: column;
+    }
+
+    #destaques .post {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    #destaques .post img {
+        height: 300px;
+    }
+
+    #destaques .post a p {
+        -webkit-line-clamp: 5;
+    }
+
+    #marca>div {
+        flex-direction: column;
+    }
+
+    #marca>div div {
+        width: 100%;
+    }
+
+    #marca>div div:first-child img {
+        display: none;
+    }
+
+    #marca>div h4 {
+        font-size: 32px;
+    }
+
+    #marca>div div p {
+        margin-bottom: 50px;
+    }
 }

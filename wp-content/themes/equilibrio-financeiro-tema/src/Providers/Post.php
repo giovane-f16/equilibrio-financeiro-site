@@ -6,8 +6,8 @@ use EquilibrioFinanceiro\Models\Post as PostModel;
 
 class Post
 {
-    private $destaques;
-    private $artigos;
+    private array $destaques;
+    private array $artigos;
 
     public function getDestaques(): array
     {
@@ -37,7 +37,7 @@ class Post
         }
 
         $posts = get_posts([
-            "numberposts" => 10
+            "numberposts" => -1
         ]);
 
         if (!$posts) {

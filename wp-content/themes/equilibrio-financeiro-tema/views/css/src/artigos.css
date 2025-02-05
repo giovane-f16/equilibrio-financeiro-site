@@ -19,10 +19,18 @@ section {
     padding-bottom: 40px;
 }
 
-.artigos .artigo a {
+.artigos .artigo>a {
     width: 100%;
     max-width: 350px;
     margin-right: 20px;
+}
+
+.artigos .artigo>div {
+    width: 50%;
+}
+
+.artigos .artigo>div a {
+    color: #000;
 }
 
 .artigos .artigo a img {
@@ -35,4 +43,28 @@ section {
 .artigos .artigo p {
     width: 60%;
     text-align: justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+    .artigos .artigo {
+        flex-direction: column;
+    }
+
+    .artigos .artigo>a {
+        margin-right: 0;
+    }
+
+    .artigos .artigo>div {
+        width: 100%;
+    }
+
+    .artigos .artigo p {
+        width: 100%;
+        -webkit-line-clamp: 5;
+    }
 }

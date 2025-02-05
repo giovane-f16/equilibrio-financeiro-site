@@ -5,6 +5,24 @@ SUCCESS_COLOR='\033[0;32m'
 ERROR_COLOR='\033[0;31m'
 NOCOLOR='\033[0m'
 
+printf "${COLOR}> Mudando para a versão 22 do Node...${NOCOLOR}\n"
+if [ ! -f ~/.nvm/nvm.sh ]; then
+  printf "${ERROR_COLOR}Erro: O arquivo ~/.nvm/nvm.sh não foi encontrado. Certifique-se de que o NVM está instalado.${NOCOLOR}\n"
+  exit 1
+fi
+
+source ~/.nvm/nvm.sh || {
+  printf "${ERROR_COLOR}Erro: Não foi possível carregar o NVM. Verifique sua instalação.${NOCOLOR}\n"
+  exit 1
+}
+
+nvm use 22.* > /dev/null 2>&1 || {
+  printf "${ERROR_COLOR}Erro: Não foi possível mudar para a versão 22 do Node.js. Certifique-se de que a versão está instalada.${NOCOLOR}\n"
+  exit 1
+}
+
+printf "${SUCCESS_COLOR}> Versão 22 do Node ativada com sucesso!${NOCOLOR}\n"
+
 printf "${COLOR}> Minificando CSS...${NOCOLOR}\n"
 
 cd views/css/src || {

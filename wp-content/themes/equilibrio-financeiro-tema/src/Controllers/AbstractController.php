@@ -17,12 +17,12 @@ abstract class AbstractController
         $this->twig        = $twig;
         $this->path        = get_template_directory_uri();
         $this->path_views  = get_template_directory_uri() . "/views";
-        $this->placeholder = "{$this->path_views}/img/placeholder.png";
+        $this->placeholder = "{$this->path_views}/img/placeholder.webp";
     }
 
     public function enqueueStylesComum(string $versao): void
     {
-        wp_enqueue_style("geral-css", "{$this->path_views}/css/src/geral.css", [], $versao);
+        wp_enqueue_style("geral-css", "{$this->path_views}/css/dist/geral.min.css", [], $versao);
     }
 
     public function enqueueScriptsComum(string $versao): void

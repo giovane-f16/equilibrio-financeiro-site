@@ -18,8 +18,7 @@ class Artigos extends AbstractController
 
     public function enqueueStyles($versao): void
     {
-        // toDo - Minify CSS
-        wp_enqueue_style("artigos-css", "{$this->path_views}/css/src/artigos.css", [], $versao);
+        wp_enqueue_style("artigos-css", "{$this->path_views}/css/dist/artigos.min.css", [], $versao);
         $this->enqueueStylesComum($versao);
     }
 

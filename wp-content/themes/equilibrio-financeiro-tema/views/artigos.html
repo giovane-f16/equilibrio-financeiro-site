@@ -5,7 +5,7 @@
             {% for artigo in artigos %}
             <li class="artigo">
                 <a href="{{ artigo.url }}">
-                    <img src="{{ artigo.imagem }}" alt="{{ artigo.titulo }}" title="{{ artigo.titulo }}">
+                    <img src="{{ artigo.imagem }}" alt="{{ artigo.titulo }}. {{ artigo.creditoImagem }}" title="{{ artigo.titulo }}. {{ artigo.creditoImagem }}">
                 </a>
                 <div>
                     <a href="{{ artigo.url }}">
@@ -13,7 +13,7 @@
                         <p>{{ artigo.resumo }}</p>
                         <span>{{ artigo.dataDePublicacao | date("d/m/Y") }}</span>
                     </a>
-                </div>                
+                </div>
             </li>
             {% endfor %}
         </ul>

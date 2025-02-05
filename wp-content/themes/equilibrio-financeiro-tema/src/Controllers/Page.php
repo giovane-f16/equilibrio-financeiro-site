@@ -3,21 +3,21 @@
 namespace EquilibrioFinanceiro\Controllers;
 
 use Twig\Environment as Twig;
-use EquilibrioFinanceiro\Models\Post as PostModel;
+use EquilibrioFinanceiro\Controllers\AbstractController;
 
-class Post extends AbstractController
+class Page extends AbstractController
 {
-    private PostModel $post_model;
+    private object $post_model;
 
-    public function __construct(Twig $twig, PostModel $post)
+    public function __construct(Twig $twig, $post_model)
     {
-        $this->post_model = $post;
+        $this->post_model = $post_model;
         parent::__construct($twig);
     }
 
     public function enqueueStyles($versao): void
     {
-        wp_enqueue_style("post-css", "{$this->path_views}/css/dist/post.min.css", [], $versao);
+        wp_enqueue_style("page-css", "{$this->path_views}/css/dist/page.min.css", [], $versao);
         $this->enqueueStylesComum($versao);
     }
 
@@ -28,7 +28,7 @@ class Post extends AbstractController
 
     public function render(): void
     {
-        echo $this->twig->render("post.html", [
+        echo $this->twig->render("page.html", [
             "path_views" => $this->path_views,
             "post"       => $this->post_model
         ]);
