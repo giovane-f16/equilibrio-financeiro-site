@@ -25,6 +25,11 @@ section {
     margin-right: 20px;
 }
 
+.artigos .artigo a:hover {
+    color:  #B8860B;
+    transition: all 0.3s ease;
+}
+
 .artigos .artigo>div {
     width: 50%;
 }

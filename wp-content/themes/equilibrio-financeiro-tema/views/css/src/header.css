@@ -1,7 +1,12 @@
 header {
     width: 100%;
     border-bottom: 1px solid #dad9d9;
-    padding: 40px 0;
+    padding: 20px 0;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 30%);
+    position: sticky;
+    background-color: #fff;
+    top: 0;
+    z-index: 2;
 }
 
 header div {
@@ -22,6 +27,11 @@ header div ul li {
 
 header div a {
     color: #000;
+}
+
+header div a:hover {
+    color:  #B8860B;
+    transition: all 0.3s ease;
 }
 
 header>div>a {

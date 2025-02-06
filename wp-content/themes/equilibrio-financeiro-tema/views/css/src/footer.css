@@ -24,6 +24,11 @@ footer div ul li a {
     color: #000;
 }
 
+footer div ul li a:hover {
+    color:  #B8860B;
+    transition: all 0.3s ease;
+}
+
 @media (max-width: 768px) {
     footer div {
         flex-direction: column;

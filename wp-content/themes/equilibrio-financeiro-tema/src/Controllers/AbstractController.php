@@ -29,14 +29,14 @@ abstract class AbstractController
     {
     }
 
-    public function getVersao() //: string
+    public function getVersao(): string
     {
         if (isset($this->versao)) {
             return $this->versao;
         }
 
         $tema = wp_get_theme();
-        $this->versao = rand(); // @todo - voltar com o trecho após finalizar: $tema->get("Version") ?? "";
+        $this->versao = $tema->get("Version") ?? "";
         return $this->versao;
     }
 }
