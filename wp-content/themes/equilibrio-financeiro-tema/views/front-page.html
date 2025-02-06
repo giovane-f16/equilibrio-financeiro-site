@@ -22,7 +22,7 @@
                 {% for destaque in destaques %}
                 <div class="post">
                     <a href="{{ destaque.url }}">
-                        <img src="{{ destaque.imagem }}" alt="{{ destaque.titulo }}" title="{{ destaque.titulo }}">
+                        <img src="{{ destaque.imagem }}" alt="{{ destaque.titulo }}. {{ destaque.creditoDaImagem }}." title="{{ destaque.titulo }}. {{ destaque.creditoDaImagem }}.">
                         <h3>{{ destaque.titulo }}</h3>
                         <p>{{ destaque.resumo }}</p>
                     </a>

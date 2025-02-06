@@ -34,7 +34,11 @@ article img {
     object-fit: cover;
     object-position: center;
     border-radius: 15px;
-    margin: 40px 0;
+    margin: 40px 0 10px 0;
+}
+
+article #conteudo {
+    margin-top: 40px
 }
 
 section:nth-of-type(2) {
@@ -55,7 +59,10 @@ section:nth-of-type(2) {
 
 .relacionadas .relacionada img {
     width: 100%;
-    height: 350px;
+    height: 325px;
+    border-radius: 15px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .relacionadas .relacionada p {
@@ -74,4 +81,9 @@ section:nth-of-type(2) {
 .relacionadas .relacionada a:hover {
     color: #B8860B;
     transition: all 0.3s ease;
+}
+
+#credito {
+    font-size: 14px;
+    color: #333;
 }

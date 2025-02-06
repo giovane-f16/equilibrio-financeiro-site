@@ -11,10 +11,8 @@
         <h1>{{ post.titulo }}</h1>
         <time>Publicado em {{ post.dataDePublicacaoTraduzida }} {% if post.dataDeAtualizacao %} | Atualizado há {{ post.tempoDesdeUltimaAtualizacao }} {% endif %}</time>
         <img src="{{ post.imagem }}" alt="{{ post.titulo }}" title="{{ post.titulo }}">
-        {% if post.creditoImagem %} <!-- toDo - Criar método na model -->
-        <p>{{ post.creditoImagem }}</p>
-        {% endif %}
-        <div>
+        <span id="credito">{{ post.creditoDaImagem }}</span>
+        <div id="conteudo">
             {{ post.conteudo | raw | nl2br }}
         </div>
     </article>

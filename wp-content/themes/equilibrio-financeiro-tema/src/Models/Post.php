@@ -15,6 +15,7 @@ class Post extends AbstractController
     protected string $imagem;
     protected string $url;
     protected string $data_de_publicacao_traduzida;
+    protected string $credito_da_imagem;
     protected ?DateTime $data_de_publicacao;
     protected ?DateTime $data_de_atualizacao;
     protected ?string $tempo_desde_ultima_atualizacao;
@@ -254,5 +255,30 @@ class Post extends AbstractController
         }, $posts);
 
         return $this->relacionadas;
+    }
+
+    public function getCreditoDaImagem(): string
+    {
+        if (isset($this->credito_da_imagem)) {
+            return $this->credito_da_imagem;
+        }
+
+        $this->credito_da_imagem = "";
+
+        $id_da_imagem = get_post_thumbnail_id($this->getId());
+
+        if (!$id_da_imagem) {
+            return $this->credito_da_imagem;
+        }
+
+        $dados_da_imagem = get_post($id_da_imagem);
+
+        if (!$dados_da_imagem instanceof \WP_Post) {
+            return $this->credito_da_imagem;
+        }
+
+        $this->credito_da_imagem = $dados_da_imagem->post_excerpt ?? "";
+
+        return $this->credito_da_imagem;
     }
 }
