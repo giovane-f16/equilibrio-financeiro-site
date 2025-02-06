@@ -23,7 +23,7 @@
             {% for post in post.relacionadas %}
             <li class="relacionada">
                 <a href="{{ post.url }}">
-                    <img src="{{ post.imagem }}" alt="{{ post.titulo }}" title="{{ post.titulo }}">
+                    <img src="{{ post.imagem }}" alt="{{ post.titulo }}. {{ post.creditoDaImagem }}" title="{{ post.titulo }}. {{ post.creditoDaImagem }}">
                     <h3>{{ post.titulo }}</h3>
                     <time>Publicado em {{ post.dataDePublicacaoTraduzida }}</time>
                     <p>{{ post.resumo }}</p>
