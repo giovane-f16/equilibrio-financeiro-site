@@ -87,3 +87,21 @@ section:nth-of-type(2) {
     font-size: 14px;
     color: #333;
 }
+
+@media (max-width: 768px) {
+    article img {
+        height: 300px;
+    }
+
+    .relacionadas {
+        flex-direction: column;
+    }
+
+    .relacionadas .relacionada {
+        margin-bottom: 20px;
+    }
+
+    .relacionadas .relacionada img {
+        height: 250px;
+    }
+}
