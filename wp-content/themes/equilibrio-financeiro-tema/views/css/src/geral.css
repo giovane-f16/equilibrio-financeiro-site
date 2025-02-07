@@ -24,6 +24,7 @@ a {
 main {
     display: flex;
     flex-direction: column;
+    margin: 0 70px;
 }
 
 @media (max-width: 768px) {
