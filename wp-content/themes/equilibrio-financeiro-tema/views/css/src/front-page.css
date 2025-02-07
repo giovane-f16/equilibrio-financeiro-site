@@ -41,7 +41,7 @@
     color: #fff;
     background-color: #000;
     border: 1px solid #000;
-    border-radius: 25px;
+    border-radius: 7px;
     width: 250px;
     height: 65px;
     display: flex;
@@ -50,15 +50,17 @@
 }
 
 #introducao>div div:first-child a:hover {
-    color: #000;
-    background-color: #fff;
-    transition: all 0.3s ease;
+    color: #fff;
+    background-color: #b8860b;
+    transition: all .3s ease;
+    border: 1px solid #b8860b;
 }
 
 #marca>div div a:hover {
-    color: #000;
-    background-color: #fff;
-    transition: all 0.3s ease;
+    color: #fff;
+    background-color: #b8860b;
+    transition: all .3s ease;
+    border: 1px solid #b8860b;
 }
 
 #destaques {
@@ -71,7 +73,7 @@
 
 #destaques>div {
     max-width: 1280px;
-    margin: 120px auto;
+    margin: 55px auto 120px auto;
     width: 100%;
 }
 
