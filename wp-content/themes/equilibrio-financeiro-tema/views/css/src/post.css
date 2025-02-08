@@ -1,5 +1,5 @@
 main>section{
-    margin: 20px auto;
+    margin: 30px auto;
     max-width: 1280px;
     width: 100%;
 }
@@ -12,6 +12,11 @@ main>section{
 .breadcrumbs li {
     margin-right: 10px;
 }
+
+.breadcrumbs li:not(:last-child) {
+    font-weight: 700;
+}
+
 .breadcrumbs li a {
     color: #333;
     text-decoration: none;
@@ -19,7 +24,7 @@ main>section{
 
 .breadcrumbs i.bi {
     margin-left: 15px;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 article {
@@ -90,6 +95,10 @@ section:nth-of-type(2) {
 }
 
 @media (max-width: 768px) {
+
+    main>section{
+        margin: 20px auto;
+    }
     article img {
         height: 300px;
     }
@@ -104,5 +113,15 @@ section:nth-of-type(2) {
 
     .relacionadas .relacionada img {
         height: 250px;
+    }
+
+    .breadcrumbs {
+        display: block;
+        line-height: 26px;
+    }
+    
+    .breadcrumbs li {
+        margin-right: 10px;
+        display: inline;
     }
 }
