@@ -47,7 +47,7 @@ class Post extends AbstractController
 
     public function getConteudo(): string
     {
-        return do_shortcode($this->conteudo);
+        return $this->conteudo;
     }
 
     public function getResumo(): string

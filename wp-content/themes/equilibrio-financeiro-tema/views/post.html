@@ -28,7 +28,7 @@
         <img src="{{ post.imagem }}" alt="{{ post.titulo }}" title="{{ post.titulo }}">
         <span id="credito">{{ post.creditoDaImagem }}</span>
         <div id="conteudo">
-            {{ post.conteudo | raw | nl2br }}
+            {{ conteudo | raw  }}
         </div>
     </article>
 

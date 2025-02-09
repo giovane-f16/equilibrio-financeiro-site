@@ -28,9 +28,11 @@ class Post extends AbstractController
 
     public function render(): void
     {
+        $conteudo = $this->post_model->getConteudo();
         echo $this->twig->render("post.html", [
             "path_views" => $this->path_views,
-            "post"       => $this->post_model
+            "post"       => $this->post_model,
+            "conteudo"   => do_blocks($conteudo),
         ]);
     }
 }
