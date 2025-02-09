@@ -47,6 +47,18 @@ article #conteudo {
     line-height: 28px;
 }
 
+article #conteudo img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 15px;
+}
+
+article #conteudo a {
+    font-weight: bold;
+}
+
 section:nth-of-type(2) {
     padding: 20px 0;
     border-top: 1px solid #ccc;

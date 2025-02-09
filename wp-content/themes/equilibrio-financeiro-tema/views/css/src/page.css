@@ -6,3 +6,9 @@ main#page {
 h1 {
     text-align: center;
 }
+
+@media (max-width: 768px) {
+    main#page {
+        margin: 0 25px;
+    }
+}
