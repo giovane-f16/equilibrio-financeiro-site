@@ -28,7 +28,18 @@
         <img src="{{ post.imagem }}" alt="{{ post.titulo }}" title="{{ post.titulo }}">
         <span id="credito">{{ post.creditoDaImagem }}</span>
         <div id="conteudo">
-            {{ conteudo | raw  }}
+            <div>{{ conteudo | raw  }}</div>
+            <div id="outros-assuntos">
+                <strong>Outros assuntos</strong>
+                <ul>
+                    {% for categoria in post.categorias %}
+                    <li>
+                        <i class="bi bi-chevron-right"></i>
+                        <a href="/categorias/{{ categoria.slug }}">{{ categoria.name }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>                
+            </div>
         </div>
     </article>
 

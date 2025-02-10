@@ -50,4 +50,20 @@ class Post
 
         return $this->artigos;
     }
+
+    public function getByCategoria(int $term_id): array
+    {
+        $posts = get_posts([
+            "category"    => $term_id,
+            "numberposts" => -1
+        ]);
+
+        if (!$posts) {
+            return [];
+        }
+
+        return array_map(function ($post) {
+            return new PostModel($post);
+        }, $posts);
+    }
 }

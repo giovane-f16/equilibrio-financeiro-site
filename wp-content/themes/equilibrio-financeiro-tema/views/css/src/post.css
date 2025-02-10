@@ -45,6 +45,12 @@ article>img {
 article #conteudo {
     margin-top: 40px;
     line-height: 28px;
+    display: flex;
+    justify-content: space-between;
+}
+
+article #conteudo>div:first-of-type {
+    width: 75%;
 }
 
 article #conteudo img {
@@ -104,6 +110,35 @@ section:nth-of-type(2) {
 #credito {
     font-size: 14px;
     color: #333;
+}
+
+article #outros-assuntos {
+    width: 20%;
+}
+
+article #outros-assuntos strong {
+    font-size: 26px;
+}
+
+article #outros-assuntos ul {
+    margin: 20px auto;
+    box-shadow: 0 0 8px 2px rgb(184 134 11 / 50%);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+article #outros-assuntos ul li {
+    margin: 10px;
+    padding: 10px 0;
+}
+
+article #outros-assuntos ul li:not(:last-of-type) {
+    border-bottom: 1px solid #ccc;
+}
+
+article #outros-assuntos ul li a {
+    color: #000;
+    font-size: 18px;
 }
 
 @media (max-width: 768px) {
