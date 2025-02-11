@@ -21,7 +21,7 @@ class Categoria extends AbstractController
 
     public function enqueueStyles($versao): void
     {
-        wp_enqueue_style("categoria-css", "{$this->path_views}/css/src/categoria.css", [], $versao);
+        wp_enqueue_style("categoria-css", "{$this->path_views}/css/dist/categoria.min.css", [], $versao);
         $this->enqueueStylesComum($versao);
     }
 
