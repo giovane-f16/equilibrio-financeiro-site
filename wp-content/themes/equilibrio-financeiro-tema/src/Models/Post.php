@@ -245,7 +245,7 @@ class Post extends AbstractController
 
 
         $this->categorias = array_filter($categorias, function($categoria) {
-            return ($categoria->slug != "uncategorized");
+            return $categoria->term_id != 1;
         });
 
         return $this->categorias;

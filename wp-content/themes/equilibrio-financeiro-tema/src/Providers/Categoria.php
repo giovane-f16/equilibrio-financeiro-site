@@ -16,6 +16,10 @@ class Categoria
 
         $categorias = get_categories();
 
+        $categorias = array_filter($categorias, function (\WP_Term $categoria) {
+            return $categoria->term_id != 1;
+        });
+
         $this->categorias = array_map(function(\WP_Term $categoria){
             return new CategoriaModel($categoria);
         }, $categorias);
