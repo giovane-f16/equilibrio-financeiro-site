@@ -27,13 +27,14 @@ class Categoria extends AbstractController
 
     public function enqueueScripts($versao): void
     {
+        wp_enqueue_script("carregar-mais-categorias", "{$this->path_views}/javascript/dist/carregar-mais-categorias.min.js", ["jquery"], $versao, true);
         $this->enqueueScriptsComum($versao);
     }
 
     public function render(): void
     {
         $term_id = $this->categoria_model->getId();
-        $posts   = $this->post_provider->getByCategoria($term_id);
+        $posts   = $this->post_provider->getByCategoria($term_id, quantidade: 10);
 
         echo $this->twig->render("categoria.html", [
             "path_views" => $this->path_views,
