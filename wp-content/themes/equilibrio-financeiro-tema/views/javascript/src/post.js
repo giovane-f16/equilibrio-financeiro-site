@@ -10,6 +10,7 @@ jQuery(function(){
         var tempInput = jQuery("<input>");
         jQuery("body").append(tempInput);
         tempInput.val(url).select();
+        document.execCommand("copy");
         tempInput.remove();
     }
 
