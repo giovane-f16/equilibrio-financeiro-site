@@ -112,33 +112,83 @@ section:nth-of-type(2) {
     color: #333;
 }
 
-article #outros-assuntos {
+article #aside {
     width: 20%;
 }
 
-article #outros-assuntos strong {
+article #aside strong {
     font-size: 26px;
 }
 
-article #outros-assuntos ul {
+article #aside #outros-assuntos ul {
     margin: 20px auto;
     box-shadow: 0 0 8px 2px rgb(184 134 11 / 50%);
     border-radius: 5px;
     padding: 5px 10px;
 }
 
-article #outros-assuntos ul li {
+article #aside #outros-assuntos ul li {
     margin: 10px;
     padding: 10px 0;
 }
 
-article #outros-assuntos ul li:not(:last-of-type) {
+article #aside #outros-assuntos ul li:not(:last-of-type) {
     border-bottom: 1px solid #ccc;
 }
 
-article #outros-assuntos ul li a {
+article #aside #outros-assuntos ul li a {
     color: #000;
     font-size: 18px;
+}
+
+article #aside #compartilhe {
+    margin-bottom: 60px;
+}
+
+article #aside #compartilhe ul {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+
+article #aside #compartilhe ul li {
+    text-align: center;
+    position: relative;
+}
+
+article #aside #compartilhe ul li a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    color: #fff;
+    background-color: #666;
+    border-radius: 5px;
+}
+
+article #aside #compartilhe ul li a.whatsapp {
+    background-color: #6cc967;
+}
+
+article #aside #compartilhe ul li a.twitter {
+    background-color: #000;
+}
+
+article #aside #compartilhe ul li a.facebook {
+    background-color: #3e5d95;
+}
+
+article #aside #compartilhe .notificacao {
+    position: absolute;
+    white-space: nowrap;
+    right: -226px;
+    top: -45px;
+    background-color: rgba(0, 0, 0, .8);
+    color: #fff;
+    border-radius: 4px;
+    padding: 4px 4px;
+    font-size: 14px;
 }
 
 @media (max-width: 768px) {
@@ -165,7 +215,7 @@ article #outros-assuntos ul li a {
         display: block;
         line-height: 26px;
     }
-    
+
     .breadcrumbs li {
         margin-right: 10px;
         display: inline;
@@ -179,8 +229,12 @@ article #outros-assuntos ul li a {
         width: 100%;
     }
 
-    article #outros-assuntos {
+    article #aside {
         width: 100%;
         margin-top: 30px;
+    }
+
+    article #aside #compartilhe .notificacao {
+        right: -300px;
     }
 }

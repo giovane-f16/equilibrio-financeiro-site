@@ -23,6 +23,7 @@ class Post extends AbstractController
 
     public function enqueueScripts($versao): void
     {
+        wp_enqueue_script("post-js", "{$this->path_views}/javascript/dist/post.min.js", ["jquery"], $versao, true);
         $this->enqueueScriptsComum($versao);
     }
 

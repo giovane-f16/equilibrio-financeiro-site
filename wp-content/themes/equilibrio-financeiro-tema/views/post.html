@@ -19,7 +19,7 @@
                 <span itemprop="name">{{ post.titulo }}</span>
                 <meta itemprop="position" content="3">
             </li>
-        </ul>        
+        </ul>
     </section>
 
     <article>
@@ -28,17 +28,57 @@
         <img src="{{ post.imagem }}" alt="{{ post.titulo }}" title="{{ post.titulo }}">
         <span id="credito">{{ post.creditoDaImagem }}</span>
         <div id="conteudo">
-            <div>{{ conteudo | raw  }}</div>
-            <div id="outros-assuntos">
-                <strong>Outros assuntos</strong>
-                <ul>
-                    {% for categoria in post.categorias %}
-                    <li>
-                        <i class="bi bi-chevron-right"></i>
-                        <a href="/categorias/{{ categoria.slug }}">{{ categoria.name }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>                
+            <div>
+                {{ conteudo | raw  }}
+            </div>
+            <div id="aside">
+                <div id="compartilhe">
+                    <strong>Compartilhe</strong>
+                    <ul>
+                        <li>
+                            <a class="whatsapp" href="https://wa.me/?text={{ post.titulo }} - {{ post.url }}" data-action="share/whatsapp/share"
+                                title="Compartilhe no Whatsapp" aria-label="Compartilhe no Whatsapp" target="_blank">
+                                <i class="bi bi-whatsapp"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="twitter"
+                                href="https://twitter.com/intent/tweet?url={{ post.url }}&amp;text={{ post.titulo }}"
+                                title="Compartilhe no X" aria-label="Compartilhe no X" target="_blank">
+                                <i class="bi bi-twitter-x"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="facebook"
+                                href="https://www.facebook.com/dialog/feed?app_id=203184006770143&amp;display=page&amp;link={{ post.url }}&amp;picture={{ post.imagem }}"
+                                title="Compartilhe no Facebook" aria-label="Compartilhe no Facebook" target="_blank">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="email"
+                                href="mailto:?subject={{ post.titulo }}&amp;body={{ post.titulo }} - {{ post.url }}"
+                                title="Compartilhe por email" aria-label="Compartilhe por email">
+                                <i class="bi bi-envelope-fill"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="copiar_link"><i class="bi bi-copy"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="outros-assuntos">
+                    <strong>Outros assuntos</strong>
+                    <ul>
+                        {% for categoria in post.categorias %}
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/categorias/{{ categoria.slug }}">{{ categoria.name }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
         </div>
     </article>
