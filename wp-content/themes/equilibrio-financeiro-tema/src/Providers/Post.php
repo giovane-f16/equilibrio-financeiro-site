@@ -30,14 +30,15 @@ class Post
         return $this->destaques;
     }
 
-    public function getArtigos(): array
+    public function getArtigos(int $quantidade = -1, int $de = 0): array
     {
         if (isset($this->artigos)) {
             return $this->artigos;
         }
 
         $posts = get_posts([
-            "numberposts" => -1
+            "numberposts" => $quantidade,
+            "offset"      => $de
         ]);
 
         if (!$posts) {
@@ -51,11 +52,12 @@ class Post
         return $this->artigos;
     }
 
-    public function getByCategoria(int $term_id): array
+    public function getByCategoria(int $term_id, int $quantidade = -1, int $de = 0): array
     {
         $posts = get_posts([
             "category"    => $term_id,
-            "numberposts" => -1
+            "numberposts" => $quantidade,
+            "offset"      => $de
         ]);
 
         if (!$posts) {

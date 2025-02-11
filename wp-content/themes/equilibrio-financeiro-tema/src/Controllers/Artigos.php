@@ -24,14 +24,16 @@ class Artigos extends AbstractController
 
     public function enqueueScripts($versao): void
     {
+        wp_enqueue_script("carregar-mais", "{$this->path_views}/javascript/dist/carregar-mais-artigos.min.js", ["jquery"], $versao, true);
         $this->enqueueScriptsComum($versao);
     }
 
     public function render(): void
     {
+        $quantidade_de_artigos = 10;
         echo $this->twig->render("artigos.html", [
             "path_views" => $this->path_views,
-            "artigos"    => $this->post_provider->getArtigos()
+            "artigos"    => $this->post_provider->getArtigos($quantidade_de_artigos)
         ]);
     }
 }

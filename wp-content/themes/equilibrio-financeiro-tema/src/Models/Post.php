@@ -18,6 +18,7 @@ class Post extends AbstractController
     protected string $credito_da_imagem;
     protected ?DateTime $data_de_publicacao;
     protected ?DateTime $data_de_atualizacao;
+    protected ?string $data_de_publicacao_formatada;
     protected ?string $tempo_desde_ultima_atualizacao;
     protected ?string $tag;
     protected ?array $wp_post_meta;
@@ -113,6 +114,23 @@ class Post extends AbstractController
         }
 
         return $this->data_de_publicacao;
+    }
+
+    public function getDataDePublicacaoFormatada(): ?string
+    {
+        if (isset($this->data_de_publicacao_formatada)) {
+            return $this->data_de_publicacao_formatada;
+        }
+
+        $data_de_publicacao = $this->getDataDePublicacao();
+
+        if (!$data_de_publicacao) {
+            return null;
+        }
+
+        $this->data_de_publicacao_formatada = $data_de_publicacao->format("d/m/Y");
+
+        return $this->data_de_publicacao_formatada;
     }
 
     public function getDataDeAtualizacao(): ?\DateTime
