@@ -26,6 +26,7 @@ class Categorias extends AbstractController
 
     public function enqueueScripts($versao): void
     {
+        wp_enqueue_script("carregar-mais", "{$this->path_views}/javascript/dist/carregar-mais-artigos.min.js", ["jquery"], $versao, true);
         $this->enqueueScriptsComum($versao);
     }
 
@@ -34,7 +35,7 @@ class Categorias extends AbstractController
         echo $this->twig->render("categorias.html", [
             "path_views" => $this->path_views,
             "categorias" => $this->categoria_provider->getTodas(),
-            "artigos"    => $this->post_provider->getArtigos()
+            "artigos"    => $this->post_provider->getArtigos(10)
         ]);
     }
 }
