@@ -27,6 +27,12 @@ main {
     margin: 0 auto;
 }
 
+@media (max-width: 1366px) {
+    main {
+        margin: 0 67px;
+    }
+}
+
 @media (max-width: 768px) {
     main {
         margin: 0 25px;
