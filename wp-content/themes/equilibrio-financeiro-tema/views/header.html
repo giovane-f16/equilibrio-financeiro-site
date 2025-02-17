@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    {% if criterio %}
+    <meta name="description" content="Resultados da busca por: {{ criterio }}">
+    {% endif %}
+
     <title>Equilíbrio Financeiro</title>
     {{ wp_head | raw }}
     {% include "partials/google-tag-manager/_head.html" %}
@@ -21,6 +26,14 @@
                 <li><a href="/artigos/">Artigos</a></li>
                 <li><a href="/sobre/">Quem Somos</a></li>
                 <li><a href="/contato/">Contato</a></li>
+                <li>
+                    <form action="/" method="GET">
+                        <label>
+                            <input type="text" name="s" placeholder="Pesquisar" aria-label="Pesquisar">
+                            <button type="submit"><i class="bi bi-search"></i></button>
+                        </label>
+                    </form>
+                </li>
             </ul>
         </div>
     </header>

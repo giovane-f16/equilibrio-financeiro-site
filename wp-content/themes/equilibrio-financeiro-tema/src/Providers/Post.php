@@ -68,4 +68,21 @@ class Post
             return new PostModel($post);
         }, $posts);
     }
+
+    public function getByCriterio(string $criterio, int $quantidade = 10, int $de = 0): array
+    {
+        $posts = get_posts([
+            "numberposts" => $quantidade,
+            "offset"      => $de,
+            "s"           => $criterio
+        ]);
+
+        if (!$posts) {
+            return [];
+        }
+
+        return array_map(function ($post) {
+            return new PostModel($post);
+        }, $posts);
+    }
 }

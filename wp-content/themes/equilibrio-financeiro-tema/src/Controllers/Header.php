@@ -8,10 +8,12 @@ use EquilibrioFinanceiro\Providers\Wordpress;
 class Header extends AbstractController
 {
     public $wordpress_provider;
+    private array $args;
 
-    public function __construct(Wordpress $wordpress_provider, Twig $twig)
+    public function __construct(Wordpress $wordpress_provider, Twig $twig, $args)
     {
         $this->wordpress_provider = $wordpress_provider;
+        $this->args               = $args;
         parent::__construct($twig);
     }
 
@@ -28,9 +30,12 @@ class Header extends AbstractController
 
     public function render(): void
     {
+        $criterio = (isset($this->args["criterio"])) ? $this->args["criterio"] : null;
+
         echo $this->twig->render("header.html", [
             "wp_head"    => $this->wordpress_provider->getWpHead(),
-            "path_views" => $this->path_views
+            "path_views" => $this->path_views,
+            "criterio"   => $criterio
         ]);
     }
 }

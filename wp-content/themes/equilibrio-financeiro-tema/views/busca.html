@@ -1,0 +1,26 @@
+<main>
+    <section>
+        <h1>Resultados da busca por: {{ criterio }}</h1>
+        <ul class="artigos">
+            {% if not resultados %}
+            <li>Nenhum resultado encontrado.</li>
+            {% endif %}
+
+            {% for artigo in resultados %}
+            <li class="artigo">
+                <a href="{{ artigo.url }}">
+                    <img src="{{ artigo.imagem }}" alt="{{ artigo.titulo }}. {{ artigo.creditoDaImagem }}" title="{{ artigo.titulo }}. {{ artigo.creditoDaImagem }}">
+                </a>
+                <div>
+                    <a href="{{ artigo.url }}">
+                        <h2>{{ artigo.titulo }}</h2>
+                        <p>{{ artigo.resumo }}</p>
+                        <span>{{ artigo.dataDePublicacao | date("d/m/Y") }}</span>
+                    </a>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        <button id="carregar-mais" data-criterio="{{ criterio }}">Carregar mais</button>
+    </section>
+</main>

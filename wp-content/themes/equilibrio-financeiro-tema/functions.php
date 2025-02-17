@@ -60,3 +60,31 @@ function carregar_mais_categorias() {
 
 add_action("wp_ajax_carregar_mais_categorias", "carregar_mais_categorias");
 add_action("wp_ajax_nopriv_carregar_mais_categorias", "carregar_mais_categorias");
+
+function carregar_mais_busca() {
+    header("Content-Type: application/json");
+    $quantidade = 5;
+    $de         = isset($_GET["de"]) ? intval($_GET["de"]) : 0;
+    $criterio   = isset($_GET["s"])  ? strval($_GET["s"])  : "";
+
+    require_once "vendor/autoload.php";
+    $post_provider = new EquilibrioFinanceiro\Providers\Post();
+    $artigos       = $post_provider->getByCriterio($criterio, $quantidade, $de);
+
+    $artigos_formatados = array_map(function($artigo) {
+        return [
+            "titulo"           => $artigo->getTitulo(),
+            "resumo"           => $artigo->getResumo(),
+            "imagem"           => $artigo->getImagem(),
+            "url"              => $artigo->getUrl(),
+            "creditoDaImagem"  => $artigo->getCreditoDaImagem(),
+            "dataDePublicacao" => $artigo->getDataDePublicacaoFormatada()
+        ];
+    }, $artigos);
+
+    echo json_encode($artigos_formatados);
+    wp_die();
+}
+
+add_action("wp_ajax_carregar_mais_busca", "carregar_mais_busca");
+add_action("wp_ajax_nopriv_carregar_mais_busca", "carregar_mais_busca");

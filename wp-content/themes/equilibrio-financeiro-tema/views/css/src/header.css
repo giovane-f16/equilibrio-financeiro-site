@@ -19,6 +19,7 @@ header div {
 
 header div ul {
     display: flex;
+    align-items: center;
 }
 
 header div ul li {
@@ -47,6 +48,54 @@ header img {
     object-position: center;
 }
 
+header>div form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+header>div label {
+    display: flex;
+    align-items: center;
+    border: 2px solid #B8860B;
+    border-radius: 25px;
+    overflow: hidden;
+    background: white;
+}
+
+header>div input[type="text"] {
+    border: none;
+    outline: none;
+    padding: 5px 12px;
+    font-size: 16px;
+    width: 100px;
+    color: #333;
+}
+
+header>div button {
+    background: #FFF;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+    color: #B8860B;
+}
+
+header>div  button:hover {
+    background: #A3740A;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+header>div button i {
+    font-size: 18px;
+}
+
+
 @media (max-width: 768px) {
     header {
         padding: 20px 0;
@@ -72,5 +121,10 @@ header img {
     header img {
         width: 50px;
         height: 50px;
+    }
+
+    header>div form,
+    header>div ul li:last-of-type  {
+        display: none;
     }
 }
