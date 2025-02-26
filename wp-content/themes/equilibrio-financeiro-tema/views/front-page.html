@@ -10,7 +10,7 @@
                 <a href="/artigos/">Artigos</a>
             </div>
             <div>
-                <img src="{{ path_views }}/img/destaque.webp" alt="Imagem ilustrativa sobre o blog" title="Imagem ilustrativa sobre o blog">
+                <img src="{{ path_views }}/img/destaque.webp" alt="Imagem ilustrativa sobre o blog" title="Imagem ilustrativa sobre o blog" fetchpriority="high"/>
             </div>
         </div>
     </section>
@@ -22,7 +22,7 @@
                 {% for destaque in destaques %}
                 <div class="post">
                     <a href="{{ destaque.url }}">
-                        <img src="{{ destaque.imagem }}" alt="{{ destaque.titulo }}. {{ destaque.creditoDaImagem }}" title="{{ destaque.titulo }}. {{ destaque.creditoDaImagem }}">
+                        <img src="{{ destaque.imagem }}" alt="{{ destaque.titulo }}. {{ destaque.creditoDaImagem }}" title="{{ destaque.titulo }}. {{ destaque.creditoDaImagem }}" fetchpriority="high"/>
                         <h3>{{ destaque.titulo }}</h3>
                         <p>{{ destaque.resumo }}</p>
                     </a>
@@ -35,7 +35,7 @@
     <section id="marca">
         <div>
             <div>
-                <img src="{{ path_views }}/img/sobre-blog.webp" alt="Imagem ilustrativa sobre o objetivo do blog" title="Imagem ilustrativa sobre o objetivo do blog">
+                <img src="{{ path_views }}/img/sobre-blog.webp" alt="Imagem ilustrativa sobre o objetivo do blog" title="Imagem ilustrativa sobre o objetivo do blog"/>
             </div>
             <div>
                 <h4>Mais sobre o nosso Blog</h4>
