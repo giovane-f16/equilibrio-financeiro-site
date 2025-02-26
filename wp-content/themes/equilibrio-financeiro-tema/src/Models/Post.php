@@ -70,6 +70,7 @@ class Post extends AbstractController
         }
 
         $tamanhos = [
+            "large",
             "medium_large",
             "medium",    
             "post-thumbnail"
