@@ -69,7 +69,11 @@ class Post extends AbstractController
             return $this->imagem;
         }
 
-        $tamanhos = ["full", "medium_large", "post-thumbnail"];
+        $tamanhos = [
+            "medium_large",
+            "medium",    
+            "post-thumbnail"
+        ];
 
         foreach ($tamanhos as $tamanho) {
             $attachment_image = wp_get_attachment_image_src($thumbnail_id, $tamanho);
