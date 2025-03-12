@@ -59,7 +59,7 @@ header>div label {
     display: flex;
     align-items: center;
     border: 2px solid #B8860B;
-    border-radius: 25px;
+    border-radius: 7px;
     overflow: hidden;
     background: white;
 }
