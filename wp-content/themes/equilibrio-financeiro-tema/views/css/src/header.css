@@ -124,7 +124,8 @@ header>div button i {
     }
 
     header>div form,
-    header>div ul li:last-of-type  {
+    header>div ul li:last-of-type,
+    header div ul li:nth-of-type(4)   {
         display: none;
     }
 }
