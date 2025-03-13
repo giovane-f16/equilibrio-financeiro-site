@@ -30,7 +30,8 @@ class Footer extends AbstractController
     {
         echo $this->twig->render("footer.html", [
             "wp_footer"  => $this->wordpress_provider->getWpFooter(),
-            "path_views" => $this->path_views
+            "path_views" => $this->path_views,
+            "ano"        => $this->getAnoAtual()
         ]);
     }
 }

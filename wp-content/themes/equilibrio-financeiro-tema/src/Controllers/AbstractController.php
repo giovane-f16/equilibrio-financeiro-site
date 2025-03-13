@@ -11,6 +11,7 @@ abstract class AbstractController
     protected string $path_views;
     protected string $versao;
     protected string $placeholder;
+    protected string $ano;
 
     public function __construct(Twig $twig = null)
     {
@@ -38,5 +39,14 @@ abstract class AbstractController
         $tema = wp_get_theme();
         $this->versao = $tema->get("Version") ?? "";
         return $this->versao;
+    }
+
+    public function getAnoAtual(): string
+    {
+        if (isset($this->ano)) {
+            return $this->ano;
+        }
+        $this->ano = date("Y");
+        return $this->ano;
     }
 }
